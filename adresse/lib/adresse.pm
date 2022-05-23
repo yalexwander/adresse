@@ -13,8 +13,13 @@ sub startup ($self) {
   # Router
   my $r = $self->routes;
 
-  # Normal route to controller
-  $r->get('/')->to('Example#welcome');
+  # UI routes
+  $r->get('/')->to('AddressUI#index')->name('ui_index');
+  $r->get('/static')->to('AddressUI#static_index')->name('ui_static_index');
+  $r->get('/result')->to('AddressUI#static_result')->name('ui_static_result');
+
+  # API routes
+  $r->get('/api/v' . $config->{'api_version'} . '/address/complete')->to('AddressAPI#complete')->name('api_complete');
 }
 
 1;

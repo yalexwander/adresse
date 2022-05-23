@@ -1,0 +1,6 @@
+% layout 'default';
+% title 'Enter Address';
+
+<form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
+  
+</form>

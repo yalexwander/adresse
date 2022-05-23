@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head><title><%= title %></title></head>
-  <body><%= content %></body>
+  <body>
+    <div>
+      <%= content %>
+    </div>
+  </body>
 </html>
