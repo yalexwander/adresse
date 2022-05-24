@@ -1,4 +1,4 @@
-package AdresseAPI;
+package adresse::API::AdresseAPI;
 use strict;
 use warnings;
 
@@ -46,8 +46,9 @@ sub query {
                 my $api_response = $json_decoder->decode( $res->body );
 
                 $result->{"status"} = "success";
-                $result->{"result_count"} = scalar(@{$api_response}) - 1;
-                $result->{"results"} = @{$api_response}[ 1 .. $result->{"result_count"} ];
+                shift @$api_response;
+                $result->{"result_count"} = scalar @$api_response;
+                $result->{"results"} = $api_response;
             }
             catch {
                 warn "caught error: $_";

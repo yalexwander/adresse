@@ -5,7 +5,7 @@
   <h1>Type to start address search</h1>
 
   <form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
-    <input v-model="search_string" type="text" id="search" placeholder="Enter address..."/>
+    <input v-model="search_string" type="text" id="search" placeholder="Enter address..." v-on:keyup="query_search"/>
     <div id="indicator">
       
     </div>
