@@ -1,6 +1,7 @@
 % layout 'default';
 % title 'Enter Address';
 
+<h1>Type to start address search</h1>
 <form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
   
 </form>
