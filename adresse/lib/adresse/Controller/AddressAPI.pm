@@ -3,11 +3,11 @@ use Mojo::Base 'Mojolicious::Controller', -signatures;
 
 use JSON;
 
-use adresse::API::AdresseAPI;
+use adresse::API::ExternalRestAPI;
 
 sub complete ($self) {
 
-    my $api = adresse::API::AdresseAPI->new($self->app->config);
+    my $api = adresse::API::ExternalRestAPI->new($self->app->config);
 
     my $result = $api->query($self->param('query'));
 

@@ -1,20 +1,23 @@
 % layout 'default';
 % title 'Enter Address';
 
-<div class="container" id="app">
+<div id="app">
   <h1>Type to start address search</h1>
 
   <form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
     <input v-model="search_string" type="text" id="search" placeholder="Enter address..." v-on:keyup="query_search"/>
-    <div id="indicator">
-      
-    </div>
   </form>
-
-  <div id="result">
-    <li v-for="item in search_results" :key="item.id">
-      {{ item.n }}
-    </li>
+  
+  <div v-if="search_status !== 'free'" class="progressbar">
+      <div class="lds-dual-ring"></div>
+  </div>
+  
+  <div class="result">
+    <ul>
+      <li v-for="item in search_results" :key="item.id">
+        {{ item.postnr }} {{ item.poststed }} {{ item.n }}
+      </li>
+    </ul>
   </div>
 </div>
 

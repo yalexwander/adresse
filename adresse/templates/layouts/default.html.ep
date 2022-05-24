@@ -5,10 +5,18 @@
   <link rel="stylesheet" href="/assets/style/fonts.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="/assets/style/normalize.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="/assets/style/milligram.css" type="text/css" media="screen" />
+
+  <link rel="stylesheet" href="/assets/style/app.css" type="text/css" media="screen" />
   
   <body>
-    <div>
-      <%= content %>
+    <div class="container">
+      <div class="navbar">
+        <a href="<%= $self->url_for('ui_index') %>">[ Search with JS ]</a>
+        <a href="<%= $self->url_for('ui_static_index') %>">[ Static HTML search ]</a>
+      </div>
+      <div>
+        <%= content %>
+      </div>
     </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-package adresse::API::AdresseAPI;
+package adresse::API::ExternalRestAPI;
 use strict;
 use warnings;
 

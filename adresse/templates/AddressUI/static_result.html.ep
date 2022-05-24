@@ -1,6 +1,27 @@
 % layout 'default';
-% title 'Enter Address';
+% title 'Search results' . $search_string;
 
-<form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
-  
-</form>
+<h2>Search results for "<%= $search_string %>"</h2>
+
+<div class="info">
+  % if ($result->{'status'} eq 'error') {
+    <div class="error">
+      <%= $result->{'message'} %>
+    </div>
+  % } else {
+    % if (! $result->{'result_count'}) {
+      <div class="info">Nothing found</div>
+    % }
+  % }
+</div>
+<div class="result">
+
+  <ul>
+% foreach my $item (@{ $result->{'results'} } ) {
+    <li>
+      <%= sprintf('%s %s %s %s', $item->{'postnr'}, $item->{'poststed'}, $item->{'n'}); %>
+    </li>
+% }
+  </ul>
+
+</div>

@@ -1,7 +1,8 @@
 % layout 'default';
 % title 'Enter Address';
 
-<h1>no-js interface</h1>
-<form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
-  
+<h1>Enter part of address and hit Enter</h1>
+<form method="GET" id="" action="<%= $self->url_for('ui_static_result') %>">
+  <input type="text" name="search_string" value="" />
+  <input type="submit" name="search_button" value="Search" />
 </form>
