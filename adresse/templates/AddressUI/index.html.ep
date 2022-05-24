@@ -1,7 +1,22 @@
 % layout 'default';
 % title 'Enter Address';
 
-<h1>Type to start address search</h1>
-<form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
-  
-</form>
+<div class="container" id="app">
+  <h1>Type to start address search</h1>
+
+  <form method="GET" id="" action="<%= $self->url_for('address#complete') %>">
+    <input v-model="search_string" type="text" id="search" placeholder="Enter address..."/>
+    <div id="indicator">
+      
+    </div>
+  </form>
+
+  <div id="result">
+    <li v-for="item in search_results" :key="item.id">
+      {{ item.n }}
+    </li>
+  </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/vendor/vue@2.6.14.js"></script>
+<script type="text/javascript" src="/assets/js/search.js"></script>

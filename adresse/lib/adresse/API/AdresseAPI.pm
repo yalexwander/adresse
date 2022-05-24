@@ -12,9 +12,10 @@ sub new {
     my $self = bless {}, $class;
 
     $self->{'config'} = $args[0];
-    
+
     return $self;
 }
+
 
 sub query {
     my ($self, $query) = @_;

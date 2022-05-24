@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head><title><%= title %></title></head>
+  
+  <link rel="stylesheet" href="/assets/style/fonts.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/assets/style/normalize.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/assets/style/milligram.css" type="text/css" media="screen" />
+  
   <body>
     <div>
       <%= content %>
